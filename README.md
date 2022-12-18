@@ -7,8 +7,55 @@ SQLite, SQLAlchemy, and Flask to use SQL database structures and querying method
 Prepare and analyze the Hawaii dataset to describe key difference in weather between June and December in Oahu. Give recommendations for further analysis and determine if a surf business is sustainable year-round.
 
 ## Results: 
+- The average temperature in Oahu in June is 75 degrees fahrenheit.
+- The average temperature in Oahu in December is 71 degrees fahrenheit.
 Provide a bulleted list with three major points from the two analysis deliverables. Use images as support where needed.
 
+<div>
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>June Temperature</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>1700.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>74.944118</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>3.257417</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>64.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>73.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>75.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>77.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>85.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 ## Summary:
 Provide a high-level summary of the results and two additional queries that you would perform to gather more weather data for June and December.
 
