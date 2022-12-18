@@ -12,46 +12,54 @@ Prepare and analyze the Hawaii dataset to describe key difference in weather bet
 Provide a bulleted list with three major points from the two analysis deliverables. Use images as support where needed.
 
 <div>
-
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
       <th>June Temperature</th>
+      <th>December Temperature</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>count</th>
       <td>1700.000000</td>
+       <td>1517.000000</td>
     </tr>
     <tr>
       <th>mean</th>
       <td>74.944118</td>
+       <td>71.041529</td>
     </tr>
     <tr>
       <th>std</th>
       <td>3.257417</td>
+       <td>3.745920</td>
     </tr>
     <tr>
       <th>min</th>
       <td>64.000000</td>
+      <td>56.000000</td>
     </tr>
     <tr>
       <th>25%</th>
       <td>73.000000</td>
+      <td>69.000000</td>
     </tr>
     <tr>
       <th>50%</th>
       <td>75.000000</td>
+      <td>71.000000</td>
     </tr>
     <tr>
       <th>75%</th>
       <td>77.000000</td>
+      <td>74.000000</td>
     </tr>
     <tr>
       <th>max</th>
       <td>85.000000</td>
+      <td>83.000000</td>
     </tr>
   </tbody>
 </table>
@@ -279,9 +287,6 @@ dec_temp = session.query(*sel).\
 dec_temp[:10]
 ```
 
-
-
-
     [('2010-12-01', 76.0),
      ('2010-12-01', 73.0),
      ('2010-12-01', 73.0),
@@ -294,8 +299,6 @@ dec_temp[:10]
      ('2010-12-02', 73.0)]
 
 
-
-
 ```python
 # 7. Convert the December temperatures to a list.
 temp = [temp[1] for temp in dec_temp[:]]
@@ -304,8 +307,6 @@ print(temp[::50])
 ```
 
     [76.0, 66.0, 70.0, 70.0, 74.0, 73.0, 70.0, 71.0, 73.0, 73.0, 71.0, 73.0, 71.0, 65.0, 73.0, 70.0, 73.0, 64.0, 72.0, 68.0, 68.0, 71.0, 65.0, 75.0, 72.0, 68.0, 76.0, 67.0, 70.0, 73.0, 73.0]
-
-
 
 ```python
 # 8. Create a DataFrame from the list of temperatures for the month of December. 
@@ -332,7 +333,6 @@ print(df[0:10].to_string(index=False))
 # 9. Calculate and print out the summary statistics for the Decemeber temperature DataFrame.
 df.describe()
 ```
-
 
 <div>
 
