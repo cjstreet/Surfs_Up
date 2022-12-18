@@ -67,8 +67,8 @@ Prepare and analyze the Hawaii dataset to describe key differences in weather be
 </div>
 
 ## Summary:
-Provide a high-level summary of the results
-The average temperatures for December are only 4 degrees less than June. December's min temperature is 56 and max is 81, so the range is 29. June's min temperature is 64 and max is 85, so the range is 21. These temperatures and ranges are pretty close. For both the months the temperature only flunctuates around plus or minus 3 degrees. The temperatures in both June and December are very similar. These are great temperatures for surfing and ice cream. So, I would recommend Oahu as a good place for surfing and ice cream.
+
+The temperatures in both June and December are very similar. The average temperatures for December is only 4 degrees less than June. December's min temperature is 56 and max is 81, so the range is 29. June's min temperature is 64 and max is 85, so the range is 21. These temperatures and ranges are pretty close. For both the months the temperature only flunctuates around plus or minus 3 degrees. Again, the temperatures in both June and December are very similar and they are great temperatures for surfing and ice cream. So, I would recommend Oahu as a good place for surfing and ice cream.
 
 Further analysis should be done on precipitation for June and December. A summary of precipitation statistics to compare for these two months is recommended. In addition, wind speed might be a factor in whether there are waves to surf or not. A summary of wind statistics for these two month is also recommended. The added information will help to provide a better picture of weather as a whole durings these months. 
 
