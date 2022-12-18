@@ -2,14 +2,15 @@
 SQLite, SQLAlchemy, and Flask to use SQL database structures and querying methods.  Visualizations in python using jupyter NB.
 
 
-
 ## Overview:
-Prepare and analyze the Hawaii dataset to describe key difference in weather between June and December in Oahu. Give recommendations for further analysis and determine if a surf business is sustainable year-round.
+Prepare and analyze the Hawaii dataset to describe key differences in weather between June and December in Oahu. Give recommendations for further analysis and determine if a surf business is sustainable year-round.
 
 ## Results: 
 - The average temperature in Oahu in June is 75 degrees fahrenheit.
 - The average temperature in Oahu in December is 71 degrees fahrenheit.
-Provide a bulleted list with three major points from the two analysis deliverables. Use images as support where needed.
+- The temperatures for both months flunctuate around 3%
+- The minimum temperature in December is about 8 degrees less than in June. 
+- The maximum temperature in June is 85 and December 83.
 
 <div>
 <table border="1" class="dataframe">
@@ -64,9 +65,14 @@ Provide a bulleted list with three major points from the two analysis deliverabl
   </tbody>
 </table>
 </div>
-## Summary:
-Provide a high-level summary of the results and two additional queries that you would perform to gather more weather data for June and December.
 
+## Summary:
+Provide a high-level summary of the results
+The average temperatures for December are only 4 degrees less than June. December's min temperature is 56 and max is 81, so the range is 29. June's min temperature is 64 and max is 85, so the range is 21. These temperatures and ranges are pretty close. For both the months the temperature only flunctuates around plus or minus 3 degrees. The temperatures in both June and December are very similar. These are great temperatures for surfing and ice cream. So, I would recommend Oahu as a good place for surfing and ice cream.
+
+Further analysis should be done on precipitation for June and December. A summary of precipitation statistics to compare for these two months is recommended. In addition, wind speed might be a factor in whether there are waves to surf or not. A summary of wind statistics for these two month is also recommended. The added information will help to provide a better picture of weather as a whole durings these months. 
+
+## Notebook:
 
 ```python
 # Dependencies
@@ -80,7 +86,6 @@ from sqlalchemy import create_engine, func, inspect
 import datetime as dt
 import pandas as pd
 ```
-
 
 ```python
 engine = create_engine("sqlite:///hawaii.sqlite")
@@ -110,13 +115,7 @@ inspector = inspect(engine)
 inspector.get_table_names()
 ```
 
-
-
-
     ['measurement', 'station']
-
-
-
 
 ```python
 # Use Inspector to print the column names and types
@@ -137,9 +136,6 @@ for c in columns:
 # Use `engine.execute` to select and display the first 10 rows from the measurement table
 engine.execute('SELECT * FROM measurement LIMIT 10').fetchall()
 ```
-
-
-
 
     [(1, 'USC00519397', '2010-01-01', 0.08, 65.0),
      (2, 'USC00519397', '2010-01-02', 0.0, 63.0),
@@ -170,9 +166,6 @@ june_temp = session.query(*sel).\
 june_temp[0:10]
 ```
 
-
-
-
     [('2010-06-01', 78.0),
      ('2010-06-01', 74.0),
      ('2010-06-01', 73.0),
@@ -184,9 +177,6 @@ june_temp[0:10]
      ('2010-06-01', 70.0),
      ('2010-06-02', 76.0)]
 
-
-
-
 ```python
 # 2. Convert the June temperatures to a list. Print the first 50 temps.
 temp = [temp[1] for temp in june_temp[:]]
@@ -194,7 +184,6 @@ print(temp[::50])
 ```
 
     [78.0, 79.0, 76.0, 77.0, 71.0, 78.0, 72.0, 73.0, 73.0, 71.0, 72.0, 70.0, 71.0, 71.0, 78.0, 75.0, 76.0, 71.0, 78.0, 75.0, 77.0, 74.0, 72.0, 78.0, 69.0, 80.0, 78.0, 72.0, 81.0, 79.0, 80.0, 80.0, 77.0, 78.0]
-
 
 
 ```python
@@ -216,15 +205,12 @@ print(df[0:10].to_string(index=False))
     2010-06-01              70.0
     2010-06-02              76.0
 
-
-
 ```python
 # 4. Calculate and print out the summary statistics for the June temperature DataFrame.
 df.describe()
 ```
 
 <div>
-
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -269,7 +255,6 @@ df.describe()
 </table>
 </div>
 
-
 ```python
 
 ```
@@ -305,7 +290,6 @@ temp = [temp[1] for temp in dec_temp[:]]
 print(temp[::50])
 
 ```
-
     [76.0, 66.0, 70.0, 70.0, 74.0, 73.0, 70.0, 71.0, 73.0, 73.0, 71.0, 73.0, 71.0, 65.0, 73.0, 70.0, 73.0, 64.0, 72.0, 68.0, 68.0, 71.0, 65.0, 75.0, 72.0, 68.0, 76.0, 67.0, 70.0, 73.0, 73.0]
 
 ```python
@@ -314,7 +298,6 @@ df = pd.DataFrame(dec_temp, columns=['Date','Dec Temperature'])
 df.set_index(df['Date'], inplace=True)
 print(df[0:10].to_string(index=False))
 ```
-
           Date  Dec Temperature
     2010-12-01             76.0
     2010-12-01             73.0
@@ -326,8 +309,6 @@ print(df[0:10].to_string(index=False))
     2010-12-01             71.0
     2010-12-02             72.0
     2010-12-02             73.0
-
-
 
 ```python
 # 9. Calculate and print out the summary statistics for the Decemeber temperature DataFrame.
