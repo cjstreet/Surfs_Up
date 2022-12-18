@@ -2,11 +2,9 @@
 SQLite, SQLAlchemy, and Flask to use SQL database structures and querying methods.  Visualizations in python using jupyter NB.
 
 
-For this part of the Challenge, write a report that describes the key differences in weather between June and December and two recommendations for further analysis.
-
 
 ## Overview:
-Explain the purpose of this analysis.
+Prepare and analyze the Hawaii dataset to describe key difference in weather between June and December in Oahu. Give recommendations for further analysis and determine if a surf business is sustainable year-round.
 
 ## Results: 
 Provide a bulleted list with three major points from the two analysis deliverables. Use images as support where needed.
